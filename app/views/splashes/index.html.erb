@@ -1,5 +1,5 @@
 <h1>Welcome to Your Budget App</h1>
 <div>
-  <%= button_to 'LOG IN' %>
-  <%= button_to 'SIGN UP' %>
+<%= button_to 'LOG IN', new_user_session_path, method: :get %>
+<%= button_to 'SIGN UP', new_user_registration_path, method: :get %>
 </div>
