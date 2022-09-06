@@ -1,0 +1,2 @@
+class SplashesController < ApplicationController
+end
