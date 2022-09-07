@@ -7,4 +7,8 @@ class Category < ApplicationRecord
   
     validates :name, presence: true, length: { maximum: 100 }
     validates :icon, presence: true, length: { maximum: 250 }
+
+    def most_recent
+        records.order(created_at: :DESC)
+    end
 end

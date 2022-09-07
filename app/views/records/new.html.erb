@@ -1,0 +1,24 @@
+<main>
+  <h1>Create Your Transaction</h1>
+    <%= form_with url: create_record_path, method: :post, local: true, scope: :add_record do |form| %>
+
+      <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name, :required => true %>
+      </div>
+
+      <div>
+        <%= form.label :amount %><br>
+        <%= form.number_field :amount, step: 0.5, :required => true %>
+      </div>
+
+      <div>
+        <%= form.label :categories, 'Choose category/categories for this transaction' %><br>
+        <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |c| %>
+            <%= c.check_box %>
+            <%= c.label %><br>
+          <% end %>
+      </div>
+      <%= form.submit 'Create Transaction' %>
+    <% end %>
+</main>
