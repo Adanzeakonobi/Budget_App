@@ -1,0 +1,17 @@
+<main>
+  <h1>Register Your Category</h1>
+    <%= form_with url: categories_path, method: :post, local: true, scope: :add_category do |form| %>
+
+      <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name, :required => true %>
+      </div>
+
+      <div>
+        <%= form.label :icon %><br>
+        <%= form.file_field :icon, :required => true %>
+      </div>
+
+      <%= form.submit 'Register Category' %>
+    <% end %>
+</main>
