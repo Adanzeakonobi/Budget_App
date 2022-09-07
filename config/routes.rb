@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "splashes#index"
 
-  resources :categories, only: [:index, :show] do
-    resources :records, only: [:index, :show]
+  resources :categories, only: [:index, :show, :new, :create] do
+    resources :records, only: [:index, :show, :new, :create]
   end
 end
