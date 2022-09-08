@@ -1,4 +1,7 @@
 <main>
+<div>
+    <%= render partial: "shared/navbar", locals: { variable: 'CATEGORIES' } %>
+  </div>
   <% @categories.each do |category| %>
     <%= link_to category_records_path(category) do %>
       <article>

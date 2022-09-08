@@ -1,4 +1,7 @@
 <main>
+<div>
+    <%= render partial: "shared/navbar", locals: { variable: 'NEW CATEGORY' } %>
+  </div>
   <h1>Register Your Category</h1>
     <%= form_with url: categories_path, method: :post, local: true, scope: :add_category do |form| %>
 
@@ -8,10 +11,13 @@
       </div>
 
       <div>
-        <%= form.label :icon %><br>
-        <%= form.file_field :icon, :required => true %>
+      <%= form.label :icon, class: 'file-upload-label' do %>
+        <p>Upload Image</p>
+        <span>No File Chosen</span>
+      <% end %><br>
+      <%= form.file_field :icon, class: 'form-field', :required => true %>
       </div>
 
-      <%= form.submit 'Register Category' %>
+      <%= form.submit 'Register Category', class: 'submit-btn reg-cat' %>
     <% end %>
 </main>

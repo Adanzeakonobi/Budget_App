@@ -1,4 +1,7 @@
 <main>
+<div>
+<%= render partial: "shared/navbar", locals: { variable: 'NEW TRANSACTION' } %>
+</div>
   <h1>Create Your Transaction</h1>
     <%= form_with url: create_record_path, method: :post, local: true, scope: :add_record do |form| %>
 

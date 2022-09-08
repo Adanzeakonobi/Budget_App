@@ -48,8 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_204806) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "record_id", null: false
-    t.index ["record_id"], name: "index_categories_on_record_id"
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
@@ -68,8 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_204806) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id", null: false
-    t.index ["category_id"], name: "index_records_on_category_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 
@@ -77,14 +73,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_204806) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "categories", "records"
   add_foreign_key "categories", "users"
   add_foreign_key "categories_records", "categories"
   add_foreign_key "categories_records", "records"
-  add_foreign_key "records", "categories"
   add_foreign_key "records", "users"
 end

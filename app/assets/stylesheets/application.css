@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    background-color: rgb(235, 238, 238);
+  }
+  .d-flex {
+    display: flex;
+  }
+  .nav-bar-container {
+    font-family: 'Italiana', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: #3778c2;
+    color: #fff;
+  }
+  .sign-out-btn {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  
+  .form-field {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+  }
+  
+  .back-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .devise-btn {
+    margin: 0 2rem;
+    width: 20rem;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Italiana', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none
+  }
+  
+  .devise-btn:hover {
+    color: #fff;
+    background-color: #3778c2;
+  }
+  
+  .forgot-password-div {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  
+  .forgot-password {
+    text-decoration: none;
+    color: #3778c2;
+    font-size: 1.2rem;
+  }
