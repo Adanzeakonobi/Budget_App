@@ -1,6 +1,13 @@
-<main>
 <div>
     <%= render partial: "shared/navbar", locals: { variable: 'CATEGORIES' } %>
+  </div>
+  <main class="categories-cont">
+  <div class="d-flex d-flex-column user-div">
+    <h1 class="splash-header"><%= current_user.name %></h1>
+    <div class="d-flex gift-div">
+      <span>Gift Credit</span>
+      <span class="dollar-amount">$145</span>
+    </div>
   </div>
   <% @categories.each do |category| %>
     <%= link_to category_records_path(category) do %>
@@ -8,7 +15,7 @@
         <div class="icon-placeholder">
           <%= image_tag(category.icon) %>
         </div>
-        <div class="details-div">
+        <div class="info-div">
           <div>
             <span><%= category.name %></span>
             <span>

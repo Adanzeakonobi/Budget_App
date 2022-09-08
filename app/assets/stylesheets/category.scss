@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Proxima-Nova';
+    src: url('../fonts/Proxima\ Nova\ Font.otf');
+  }
+  
+  $italianno: 'Italianno', cursive;
+  $proxima-nova: 'Proxima-Nova', sans-serif;
+  $italiana: 'Italiana', serif;
+  $roboto: 'Roboto', sans-serif;
+  $blue: #3778c2;
+  $bold: bold;
+  $grey: #434b54;
+  $shadow: 0 1px 4px 6px rgba(16, 33, 100, 0.1);
+  
+  .new-btn-div {
+    background-color: #5fb523;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  
+    button,
+    input {
+      border: 1px solid white;
+      background: transparent;
+      width: 20rem;
+      padding: 1.5rem;
+      margin: 1.5rem;
+      font-size: 1.2rem;
+      color: #fff;
+      font-family: $italiana;
+    }
+  }
+  
+  .icon-placeholder {
+    width: 8rem;
+    height: 6rem;
+  
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .dollar-amount {
+    font-weight: $bold;
+  }
+  
+  .categories-cont {
+    color: $grey;
+    padding-bottom: 10rem;
+  
+    .user-div {
+      background-color: #fff;
+      margin-bottom: 1rem;
+      box-shadow: $shadow;
+  
+      .splash-header {
+        padding: 1rem 0.5rem 0 0.5rem;
+        font-family: $proxima-nova;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: $bold;
+      }
+  
+      div.gift-div {
+        padding: 0.2rem 0.5rem;
+        justify-content: space-between;
+        font-family: $roboto;
+      }
+    }
+  
+    .transaction-details-div {
+      color: #434b54;
+      margin: 1rem 0.5rem;
+      gap: 1rem;
+      font-family: $roboto;
+      box-shadow: $shadow;
+  
+      .info-div {
+        font-size: 1.4rem;
+        width: 65%;
+        padding-top: 1.2rem;
+        padding-right: 0.5rem;
+  
+        .dollar-amount {
+          font-weight: $bold;
+        }
+  
+        .date {
+          font-size: 1.3rem;
+          font-family: $italianno;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  .register-header {
+    font-family: $italianno;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 3.5rem 0;
+  }
+  
+  .new-categories-cont {
+    color: $grey;
+  
+    .upload-image {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1a4f8b;
+      color: #fff;
+      font-family: $italiana;
+      font-size: 1.2rem;
+    }
+  
+    .file-name {
+      display: none;
+      font-size: 1rem;
+    }
+  
+    .file-field {
+      display: none;
+    }
+  }

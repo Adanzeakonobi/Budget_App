@@ -1,27 +1,28 @@
-<main>
 <div>
-    <%= render partial: "shared/navbar", locals: { variable: 'TRANSACTIONS' } %>
-  </div>
-  <div>
-    <div>
-       <%= image_tag(@category.icon) %>
+  <%= render partial: "shared/navbar", locals: { variable: 'TRANSACTIONS', path: categories_path } %>
+</div>
+<main class="records-cont">
+  <div class="top-part">
+    <div class="icon-placeholder d-flex space-between record-img-div">
+      <%= image_tag(@category.icon) %>
+      <h1><%= @category.name %></h1>
     </div>
-    <div>
-      <%= @category.name %>
+    <div class="payment-div d-flex space-between">
+      <p class="dollar-amount">Total Payment:</p>
+      <p class="dollar-amount">$<%= @category.records.reduce(0) { |sum, item| sum + item.amount }%> </p>
     </div>
   </div>
-  <div class="payment-div">
-    <p>Total Payment:</p>
-    <p> <%= @category.records.reduce(0) { |sum, item| sum + item.amount }%> </p>
-  </div>
-  <div>
+  <div class="transaction-general-div">
     <% @category.most_recent.each do |record| %>
-      <p> <%= record.name %> </p>
-      <p>Transaction No <%= record.id %> </p>
-      <p> <%= record.created_at.strftime("%d %b %Y at %I:%M%p") %> </p>
+      <p class="id-number">Transaction No <%= record.id %> </p>
+      <div class="transaction-detail d-flex space-between">
+        <p> <%= record.name %> </p>
+        <p>$<%= record.amount %></p>
+      </div>
+      <p class="date"> <%= record.created_at.strftime("%d %b %Y at %I:%M%p") %> </p>
     <% end %>
   </div>
-  <div>
-    <%= button_to 'Add New Transaction', new_record_url, method: :get %>
+  <div class="new-btn-div">
+    <%= button_to 'Add New Transaction', new_category_record_url(@category), method: :get %>
   </div>
 </main>
