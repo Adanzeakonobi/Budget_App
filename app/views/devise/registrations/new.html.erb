@@ -6,30 +6,27 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, placeholder: :name, class: 'form-field', autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, placeholder: :email, class: 'form-field', autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= f.password_field :password, placeholder: :password, class: 'form-field', autocomplete: "new-password" %>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+<div class="field">
+  <%= f.password_field :password_confirmation, placeholder: :password_confirmation, class: 'form-field', autocomplete: "new-password" %>
+  <% if @minimum_password_length %>
+  <p class="password-character">(Password should be <%= @minimum_password_length %> characters minimum)</p>
+  <% end %><br />
+</div>
+
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: 'devise-btn sign-up-btn' %>
   </div>
 <% end %>
 

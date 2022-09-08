@@ -1,4 +1,4 @@
-/*
+/* /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,13 +13,13 @@
  *= require_tree .
  *= require_self
  */
- body {
+   body {
     background-color: rgb(235, 238, 238);
   }
   .d-flex {
     display: flex;
   }
-  .nav-bar-container {
+  .navi-bar-cont {
     font-family: 'Italiana', serif;
     font-size: 1.2rem;
     font-weight: bold;
@@ -75,3 +75,4 @@
     color: #3778c2;
     font-size: 1.2rem;
   }
+  

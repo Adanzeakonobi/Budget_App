@@ -1,13 +1,17 @@
-<nav>
+<nav class="navi-bar-cont d-flex">
   <div>
-    <i class="fas fa-arrow-left"></i>
+  <%= link_to path, class: 'back-link' do %>
+    <i class="fa-solid fa-circle-left"></i>
+  <% end %>
   </div>
   <div> <%= variable %> </div>
   <div>
-    <i class="fas fa-user"></i>
+    <%= button_to destroy_user_session_url, method: :delete, class: 'sign-out-btn' do %>
+      <i class="fas fa-right-from-bracket"></i>
+    <% end %>
   </div>
 </nav>
-<div>
+<div class="flash-cont d-flex">
   <% flash.each do |name, msg| -%>
     <%= content_tag :span, msg, class: name %>
   <% end -%>

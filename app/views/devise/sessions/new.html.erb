@@ -1,5 +1,5 @@
 <div>
-  <%= render partial: "shared/navbar", locals: {variable: 'LOGIN' } %>
+  <%= render partial: "shared/navbar", locals: {variable: 'LOGIN', path: root_path } %>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: 'devise-btn' %>
   </div>
 <% end %>
 
