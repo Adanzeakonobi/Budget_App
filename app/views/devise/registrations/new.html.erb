@@ -1,5 +1,5 @@
 <div>
-  <%= render partial: "shared/navbar", locals: {variable: 'REGISTER' } %>
+  <%= render partial: "shared/navbar", locals: {variable: 'REGISTER', path: root_path  }%>
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
