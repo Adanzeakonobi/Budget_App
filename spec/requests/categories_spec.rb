@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :request do
   let(:user) do
-    user = User.create!(name: 'Nneka', email: 'ada@ada.com', password: 'password')
+    User.create!(name: 'Nneka', email: 'ada@ada.com', password: 'password')
   end
 
   before(:each) do

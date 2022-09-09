@@ -6,7 +6,6 @@ describe Category, type: :model do
     @category = @user.categories.new(name: 'Games')
   end
 
-
   it 'should not be valid without a name' do
     @category.name = nil
     expect(@category).to_not be_valid
