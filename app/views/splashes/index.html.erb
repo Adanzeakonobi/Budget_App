@@ -1,0 +1,8 @@
+<main class="splash-page-cont">
+  <h1 class="splash-header">Welcome</h1>
+  <h2 class="appli-name">Transactions App</h2>
+  <div>
+    <%= button_to 'LOG IN', new_user_session_path, method: :get, class: 'devise-btn' %>
+    <%= button_to 'SIGN UP', new_user_registration_path, method: :get, class: 'devise-btn log-in-btn' %>
+  </div>
+</main>

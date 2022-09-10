@@ -1,0 +1,133 @@
+$italianno: 'Italianno', cursive;
+$italiana: 'Italiana', serif;
+$roboto: 'Roboto', sans-serif;
+$blue: #3778c2;
+$bold: bold;
+$grey: #434b54;
+$shadow: 0 1px 4px 6px rgba(16, 33, 100, 0.1);
+
+.new-record-cont {
+  color: $grey;
+  padding-bottom: 8rem;
+
+  .register-header {
+    margin: 2.5rem 0;
+  }
+
+  .general-checkbox-div {
+    font-family: $roboto;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+
+    .checkbox-main-label {
+      font-size: 1.2rem;
+      line-height: 1.1rem;
+      font-weight: $bold;
+    }
+
+    .checkbox-div {
+      display: grid;
+      grid-template-columns: 1em auto;
+      gap: 0.5em;
+
+      .checkbox-label {
+        font-size: 1.1rem;
+        line-height: 0.7rem;
+        font-weight: bold;
+        margin-top: 0.2rem;
+      }
+
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        margin-top: 0.1rem;
+        display: grid;
+        place-content: center;
+      }
+
+      input[type="checkbox"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        background-color: $blue;
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+
+      input[type="checkbox"]:focus {
+        outline: 0.15em solid currentColor;
+        outline-offset: 0.15em;
+      }
+    }
+
+    .checkbox-div:first-of-type {
+      margin-top: 0.7rem;
+    }
+  }
+}
+
+.records-cont {
+  margin: 0.7rem;
+  color: $grey;
+  font-family: $roboto;
+  padding-bottom: 8rem;
+
+  .top-part {
+    box-shadow: $shadow;
+    padding: 0.4rem;
+
+    .record-img-div {
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .payment-div {
+      margin-top: 0.7rem;
+      font-size: 2rem;
+      font-family: $italianno;
+      border-top: 2px solid $grey;
+      border-bottom: 2px solid $grey;
+    }
+  }
+
+  .transaction-general-div {
+    padding: 0.4rem;
+    margin-top: 1rem;
+
+    .id-number {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .transaction-detail {
+      font-family: $italianno;
+      font-size: 1.5rem;
+      font-weight: $bold;
+    }
+
+    .date {
+      font-size: 0.8rem;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid $grey;
+    }
+  }
+}
