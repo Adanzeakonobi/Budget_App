@@ -1,4 +1,4 @@
-/*
+/* /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +13,101 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url('../fonts/Proxima\ Nova\ Font.otf');
+}
+
+body {
+  background-color: rgb(235, 238, 238);
+  font-family: 'Proxima-Nova', sans-serif;
+  color: #434b54;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.navi-bar-cont {
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.sign-out-btn {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.form-field {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.back-link {
+  color: white;
+}
+
+.devise-btn {
+  margin: 0 2rem;
+  width: 20rem;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Italiana', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.devise-btn:hover {
+  color: #fff;
+  background-color: #3778c2;
+}
+
+.log-in-btn {
+  margin-top: 1.5rem;
+}
+
+.forgot-password-div {
+  margin-top: 0.5rem;
+}
+
+.forgot-password {
+  color: #3778c2;
+  font-size: 1.2rem;
+}
+
+.password-character {
+  color: #3778c2;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 0.4rem;
+  margin-left: 0.4rem;
+}

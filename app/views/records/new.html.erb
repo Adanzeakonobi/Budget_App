@@ -1,0 +1,29 @@
+<main class="new-record-cont">
+  <div>
+    <%= render partial: "shared/navbar", locals: { variable: 'NEW TRANSACTION', path: category_records_path(@category) } %>
+  </div>
+  <h1 class="register-header">Create Your Transaction</h1>
+    <%= form_with url:  category_records_path(@category), method: :post, local: true, scope: :add_record do |form| %>
+
+      <div>
+        <%= form.text_field :name, placeholder: :name, class: 'form-field', :required => true %>
+      </div>
+
+      <div>
+        <%= form.number_field :amount, placeholder: :amount, class: 'form-field', step: 0.5, :required => true %>
+      </div>
+
+      <div class="general-checkbox-div">
+        <%= form.label :categories, 'Select Category/Categories', class: 'checkbox-main-label' %><br>
+        <%= form.collection_check_boxes :category_ids, Category.all, :id, :name, class: 'collection' do |c| %>
+          <div class="checkbox-div">
+            <%= c.check_box %>
+            <%= c.label class: 'checkbox-label' %><br>
+          </div>
+        <% end %>
+      </div>
+      <div class="new-btn-div">
+        <%= form.submit 'Create Transaction' %>
+      </div>
+    <% end %>
+</main>

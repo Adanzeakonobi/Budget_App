@@ -1,0 +1,33 @@
+<div>
+    <%= render partial: "shared/navbar", locals: { variable: 'CATEGORIES', path: root_path } %>
+  </div>
+  <main class="categories-cont">
+  <div class="d-flex d-flex-column user-div">
+    <h1 class="splash-header"><%= current_user.name %></h1>
+    <div class="d-flex gift-div">
+      <span>Gift Credit</span>
+      <span class="dollar-amount">$145</span>
+    </div>
+  </div>
+  <% @categories.each do |category| %>
+    <%= link_to category_records_path(category) do %>
+      <article class="transaction-details-div d-flex">
+        <div class="icon-placeholder">
+          <%= image_tag(category.icon) %>
+        </div>
+        <div class="info-div d-flex d-flex-column space-between">
+          <div class="d-flex space-between">
+            <span><%= category.name %></span>
+            <span class="dollar-amount">
+              $<%= category.records.reduce(0) { |sum, item| sum + item.amount } %>
+            </span>
+          </div>
+          <div class="date"><%= category.created_at.strftime('%d %b %Y') %></div>
+        </div>
+      </article>
+    <% end %>
+  <% end %>
+  <div class="new-btn-div">
+    <%= button_to 'Add New Category', new_category_url, method: :get %>
+  </div>
+</main>

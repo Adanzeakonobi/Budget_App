@@ -1,0 +1,41 @@
+<main class="new-categories-cont">
+  <div>
+    <%= render partial: "shared/navbar", locals: { variable: 'NEW CATEGORY', path: categories_path } %>
+  </div>
+  <h1 class="register-header">Register Your Category</h1>
+  <%= form_with url: categories_path, method: :post, local: true, scope: :add_category do |form| %>
+
+      <div>
+        <%= form.text_field :name,placeholder: :name, class: 'form-field', :required => true %>
+      </div>
+
+      <div>
+      <%= form.label :icon, class: 'file-upload-label' do %>
+        <p class="upload-image">Upload Image</p>
+        <span class="file-name">No File Chosen</span>
+      <% end %><br>
+      <%= form.file_field :icon, class: 'form-field', :required => true %>
+      </div>
+
+      <div class="new-btn-div">
+      <%= form.submit 'Register Category', class: 'submit-btn reg-cat' %>
+    </div>
+    <% end %>
+</main>
+<script>
+  const FILEUPLOADER = document.querySelector('#add_category_icon');
+  FILEUPLOADER.addEventListener("change", (e) => {
+    document.querySelector('.file-upload-label > span').style.display = 'block';
+    document.querySelector('.file-upload-label > span').innerText = e.target.files[0].name;
+    document.querySelector('.file-upload-label > span').style.color = '#5fb523';
+    document.querySelector('.file-upload-label > p').style.backgroundColor = "#5fb523";
+    document.querySelector('.file-upload-label > p').innerText = "Uploaded ✓"
+  })
+
+  document.querySelector('.reg-cat').addEventListener('click', () => {
+    if ((document.querySelector('.file-upload-label > span').innerText == 'No File Chosen') && 
+    (document.querySelector('#add_category_name').value !== '')) {
+      alert('select an icon for this category!')
+    }
+  })
+</script>
